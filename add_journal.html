@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+      type="text/javascript"
+    ></script>
+    <script src="./script/jquery.js"></script>
+    <!-- Bootstrap CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <!-- Bootstrap JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+      }
+    </style>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+
+    <title>Create new Journal</title>
+  </head>
+  <style>
+    .card-sub {
+      cursor: move;
+      border: none;
+      margin: 10px;
+      -webkit-box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.05),
+        0 -2px 1px -2px rgba(0, 0, 0, 0.04), 0 0 0 -1px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.05),
+        0 -2px 1px -2px rgba(0, 0, 0, 0.04), 0 0 0 -1px rgba(0, 0, 0, 0.05);
+    }
+
+    .card-block {
+      margin: 10px;
+      padding: 1.25rem;
+      background-color: #fff !important;
+    }
+  </style>
+  <style>
+    .card-sub {
+      cursor: move;
+      border: none;
+      margin: 10px;
+      -webkit-box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.05),
+        0 -2px 1px -2px rgba(0, 0, 0, 0.04), 0 0 0 -1px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.05),
+        0 -2px 1px -2px rgba(0, 0, 0, 0.04), 0 0 0 -1px rgba(0, 0, 0, 0.05);
+    }
+
+    .card-block {
+      margin: 10px;
+      padding: 1.25rem;
+      background-color: #fff !important;
+    }
+    header {
+      font-family: Arial, Helvetica, sans-serif;
+      width: 100%;
+      background-color: white;
+      border-bottom: 2px solid black;
+      color: black;
+      font-size: 65px;
+    }
+
+    /* Style all font awesome icons */
+    .IC {
+      float: right;
+      padding: 10px;
+      font-size: 70px;
+      width: 70px;
+      height: 90px;
+      text-align: center;
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+
+      border: none;
+      border-radius: 50%;
+    }
+
+    /* Add a hover effect if you want */
+    .IC:hover {
+      opacity: 0.7;
+    }
+
+    /* magnifying glass */
+    .IC-magnifyingglass {
+      background: white;
+    }
+
+    /* bell */
+    .IC-bell {
+      background: white;
+    }
+
+    /* profile */
+    .IC-profile {
+      background: white;
+    }
+
+    #newbook {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style-type: none;
+      width: 25%;
+      margin: 0;
+      padding: 1%;
+      overflow: hidden;
+      background-color: #eba92a;
+    }
+    a {
+      text-align: justify;
+    }
+
+    img {
+      padding: 0 20px 0;
+      align-content: center;
+    }
+    #extra1,
+    #extra2 {
+      padding: 0 100px 0;
+    }
+  </style>
+  <header>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+      }
+    </style>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+
+    <div style="padding: 20px">
+      <button
+        style="border: none; background-color: rgba(0, 0, 0, 0)"
+        onclick="navigate('browse_page.html')"
+      >
+        Journalor
+      </button>
+
+      <!-- Add icon library -->
+      <link rel="stylesheet" href="  " />
+
+      <!-- Add font awesome icons -->
+      <button
+        href="#"
+        class="IC IC-profile"
+        onclick="navigate('./profile_page.html')"
+      >
+        <span class="material-symbols-outlined">Person</span>
+      </button>
+
+      <button
+        href="#"
+        class="IC IC-bell"
+        onclick="navigate('./notification_page.html')"
+      >
+        <span class="material-symbols-outlined">Notifications</span>
+      </button>
+
+      <button
+        href="#"
+        class="IC IC-magnifyingglass"
+        onclick="navigate('./search_page.html')"
+      >
+        <span class="material-symbols-outlined">Search</span>
+      </button>
+    </div>
+  </header>
+  <body id="main" style="display: none">
+    <!-- Journal Overview Card -->
+    <div class="container-fluid">
+      <div class="card" style="margin-top: 20px">
+        <!-- <img class="card-img-top" src="..." alt="Card image cap" /> -->
+        <div class="card-body">
+          <h1 class="card-title">Add Journal</h1>
+
+          <div class="container">
+            <div class="row row-cols-5">
+              <div class="col">
+                <label for="title" class="form-label"
+                  ><span style="font-size: 20px">Title</span></label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="title"
+                  aria-describedby="type your journal title here"
+                  placeholder="Type your journal title here"
+                />
+              </div>
+              <div class="col-3">
+                <label for="tags" class="form-label"
+                  ><span style="font-size: 20px">Tags</span></label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="tags"
+                  aria-describedby="type your tags here"
+                  placeholder="Type your tags here"
+                />
+              </div>
+              <div class="col">
+                <label for="tourism_type" class="form-label"
+                  ><span style="font-size: 20px">Tourism Type</span></label
+                >
+                <select id="tourism_type" class="form-select">
+                  <option value="" selected>Select an option</option>
+                  <option value="ADVENTURE">Adventure</option>
+                  <option value="LEISURE">Leisure</option>
+                </select>
+              </div>
+              <div class="col-2">
+                <label for="no_adults" class="form-label"
+                  ><span style="font-size: 20px"># of Adults</span></label
+                >
+                <input type="number" class="form-control" id="no_adults" />
+              </div>
+              <div class="col-2">
+                <label for="no_children" class="form-label"
+                  ><span style="font-size: 20px"># of Children</span></label
+                >
+                <input type="number" class="form-control" id="no_children" />
+              </div>
+            </div>
+            <div class="row" style="margin-top: 20px">
+              <div class="col-3">
+                <button type="button" class="btn btn-primary btn-lg" disabled>
+                  Add Image
+                </button>
+              </div>
+            </div>
+            <div class="row" style="margin-top: 20px">
+              <div class="col">
+                <label for="description" class="form-label"
+                  ><span style="font-size: 20px">Description</span></label
+                ><textarea
+                  class="form-control"
+                  placeholder="Type your journal description"
+                  id="description"
+                  rows="5"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Journal Blocks and Option -->
+    <div class="container-fluid mt-3">
+      <div class="row">
+        <div class="col-9">
+          <!-- Alert -->
+          <div
+            class="alert alert-warning alert-dismissible fade show"
+            role="alert"
+            id="field_alert"
+            style="display: none"
+          >
+            Please fill all the required fields
+            <button
+              type="button"
+              class="close"
+              data-dismiss="alert"
+              aria-label="Close"
+              style="background-color: rgba(0, 0, 0, 0); border: 0"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <!-- Actual Journal Block -->
+          <div class="card">
+            <!-- Block Area -->
+            <div id="blocks_area" style="padding: 20px">
+              <!-- Card Examples -->
+              <!-- Day Seperator -->
+              <!-- <div class="card m-2 p-2">
+                <div class="row align-items-center">
+                  <div class="col-1">
+                    <div>ICON</div>
+                    <button type="button" class="btn btn-secondary btn-sm mt-1">
+                      UP
+                    </button>
+                    <button type="button" class="btn btn-secondary btn-sm mt-1">
+                      DOWN
+                    </button>
+                  </div>
+                  <div class="col-1">
+                    <h2>Day</h2>
+                  </div>
+                  <div class="col-1">
+                    <input type="number" class="form-control" id="day0" />
+                  </div>
+                </div>
+              </div> -->
+              <!-- New attraction -->
+              <!-- <div class="card m-2 p-2">
+                <div class="row align-items-center">
+                  <div class="col-1">
+                    <div>ICON</div>
+                    <button type="button" class="btn btn-secondary btn-sm mt-1">
+                      UP
+                    </button>
+                    <button type="button" class="btn btn-secondary btn-sm mt-1">
+                      DOWN
+                    </button>
+                  </div>
+                  <div class="col">
+                    <div class="row">
+                      <div class="col-3">
+                        <label for="attraction2from">Time</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="attraction2from"
+                          placeholder="From"
+                        />
+                      </div>
+                      <div class="col-3">
+                        <label for="attraction2to"> </label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="attraction2to"
+                          placeholder="To"
+                        />
+                      </div>
+                      <div class="col-3">
+                        <label for="attraction2name">Name</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="attraction2name"
+                          placeholder="Block name"
+                        />
+                      </div>
+                      <div class="col-2">
+                        <label for="attraction2name">Price</label>
+                        <input
+                          type="number"
+                          class="form-control"
+                          id="attraction2price"
+                          placeholder="Total Spent"
+                        />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-11">
+                        <label for="attraction2link">External Link</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="attraction2link"
+                          placeholder=""
+                        />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-11">
+                        <label for="attraction2description">Description</label>
+                        <textarea
+                          class="form-control"
+                          placeholder="Leave a comment here"
+                          id="attraction2description"
+                          rows="4"
+                        ></textarea>
+                      </div>
+                      <div class="row mt-2">
+                        <div class="col">
+                          <button
+                            type="button"
+                            class="btn btn-primary"
+                            disabled
+                          >
+                            Add Image
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div style="text-align: right">
+                  <button
+                    type="button"
+                    class="btn btn-danger mr-0 ml-auto"
+                    style="width: 10%"
+                  >
+                    Remove
+                  </button>
+                </div>
+              </div> -->
+              <!-- New travel -->
+              <!-- <div class="card m-2 p-2">
+                <div class="row align-items-center">
+                  <div class="col-1">
+                    <div>ICON</div>
+                    <button type="button" class="btn btn-secondary btn-sm mt-1">
+                      UP
+                    </button>
+                    <button type="button" class="btn btn-secondary btn-sm mt-1">
+                      DOWN
+                    </button>
+                  </div>
+                  <div class="col">
+                    <div class="row">
+                      <div class="col-3">
+                        <label for="travel3from">Time</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="travel3from"
+                          placeholder="From"
+                        />
+                      </div>
+                      <div class="col-3">
+                        <label for="travel3to"> </label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="travel3to"
+                          placeholder="To"
+                        />
+                      </div>
+                      <div class="col-3">
+                        <label for="travel3type" class="form-label"
+                          >Transportation</label
+                        >
+                        <select id="travel3type" class="form-select">
+                          <option value="" selected>Select Option</option>
+                          <option value="WALK">Walking</option>
+                          <option value="BUS">Bus</option>
+                          <option value="CAR">Car</option>
+                          <option value="PLANE">Plane</option>
+                          <option value="TRAIN">TRAIN</option>
+                        </select>
+                      </div>
+                      <div class="col-2">
+                        <label for="attraction3name">Price</label>
+                        <input
+                          type="number"
+                          class="form-control"
+                          id="attraction2price"
+                          placeholder="Total Spent"
+                        />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-5">
+                        <label for="travel3namefrom">Destination</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="travel3from"
+                          placeholder="From"
+                        />
+                      </div>
+                      <div class="col-5">
+                        <label for="travel3nameto"> </label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="travel3to"
+                          placeholder="To"
+                        />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-11">
+                        <label for="attraction3link">External Link</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="attraction3link"
+                          placeholder=""
+                        />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-11">
+                        <label for="attraction3description">Description</label>
+                        <textarea
+                          class="form-control"
+                          placeholder="Leave a comment here"
+                          id="attraction2description"
+                          rows="4"
+                        ></textarea>
+                      </div>
+                    </div>
+                    <div class="row mt-2">
+                      <div class="col">
+                        <button type="button" class="btn btn-primary" disabled>
+                          Add Image
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="sticky-top pt-2 bord">
+            <div class="card">
+              <button
+                type="button"
+                onclick="addDay()"
+                class="btn btn-outline-secondary btn-lg"
+                style="width: 100%"
+              >
+                Add Day
+              </button>
+            </div>
+            <div class="card mt-2">
+              <button
+                type="button"
+                onclick="addJournalBlock('attraction')"
+                class="btn btn-outline-secondary btn-lg"
+                style="width: 100%"
+              >
+                New Attraction
+              </button>
+            </div>
+            <div class="card mt-2">
+              <button
+                type="button"
+                onclick="addJournalBlock('hotel')"
+                class="btn btn-outline-secondary btn-lg"
+                style="width: 100%"
+              >
+                New Hotel
+              </button>
+            </div>
+            <div class="card mt-2">
+              <button
+                type="button"
+                onclick="addJournalBlock('restaurant')"
+                class="btn btn-outline-secondary btn-lg"
+                style="width: 100%"
+              >
+                New Restaruant
+              </button>
+            </div>
+            <div class="card mt-2">
+              <button
+                type="button"
+                onclick="addJournalBlock('transport')"
+                class="btn btn-outline-secondary btn-lg"
+                style="width: 100%"
+              >
+                New Transportation
+              </button>
+            </div>
+            <div class="card mt-2">
+              <button
+                type="button"
+                class="btn btn-outline-secondary btn-lg"
+                style="width: 100%"
+              >
+                Set as Private
+              </button>
+            </div>
+            <div class="card mt-2">
+              <button
+                type="button"
+                class="btn btn-primary btn-lg"
+                style="width: 100%"
+                onclick="submitJournal()"
+              >
+                Save
+              </button>
+            </div>
+            <div class="card mt-2">
+              <button
+                type="button"
+                class="btn btn-danger btn-lg"
+                style="width: 100%"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    //Initiate Array of Blocks
+    journalblock_arr = [];
+    let runningno = journalblock_arr.length;
+
+    let user_id = "";
+    let user_searchable = "";
+    let searchable = "";
+
+    const addJournalBlock = (blockType) => {
+      saveBlocks();
+      journalblock_arr.push({
+        type: blockType,
+        order: runningno,
+        name: "",
+        transportType: "",
+        destFrom: "",
+        destTo: "",
+        timeFrom: "",
+        timeTo: "",
+        price: 0,
+        link: "",
+        desc: "",
+        images: [],
+      });
+
+      runningno++;
+
+      renderBlocks();
+    };
+
+    const addDay = () => {
+      saveBlocks();
+      journalblock_arr.push({
+        type: "day",
+        order: runningno,
+        day: 0,
+      });
+
+      runningno++;
+      renderBlocks();
+    };
+
+    const reorder = () => {
+      for (let i = 0; i < journalblock_arr.length; i++) {
+        journalblock_arr[i].order = i;
+      }
+      runningno = journalblock_arr.length;
+    };
+
+    const removeBlock = (order) => {
+      for (let i = 0; i < journalblock_arr.length; i++) {
+        if (journalblock_arr[i].order == order) {
+          saveBlocks();
+          journalblock_arr.splice(i, 1);
+
+          //Risk af
+          reorder();
+          renderBlocks();
+
+          return;
+        }
+      }
+      console.log("Error occured, removing element no." + order);
+      renderBlocks();
+    };
+
+    const logBlocks = () => {
+      console.log(journalblock_arr);
+    };
+
+    const saveBlocks = () => {
+      if (journalblock_arr.length == 0) {
+        return;
+      }
+      for (let i = 0; i < journalblock_arr.length; i++) {
+        let current_order = journalblock_arr[i].order;
+        if (journalblock_arr[i].type == "day") {
+          journalblock_arr[i] = {
+            type: "day",
+            order: i,
+            day: document.getElementById("day" + current_order).value,
+          };
+        } else if (journalblock_arr[i].type == "transport") {
+          journalblock_arr[i] = {
+            type: "transport",
+            order: i,
+            name: "Transport",
+            transportType: document.getElementById(
+              "transport" + current_order + "type"
+            ).value,
+            destFrom: document.getElementById(
+              "transport" + current_order + "namefrom"
+            ).value,
+            destTo: document.getElementById(
+              "transport" + current_order + "nameto"
+            ).value,
+            timeFrom: document.getElementById(
+              "transport" + current_order + "from"
+            ).value,
+            timeTo: document.getElementById("transport" + current_order + "to")
+              .value,
+            price: document.getElementById(
+              "transport" + current_order + "price"
+            ).value,
+            link: document.getElementById("transport" + current_order + "link")
+              .value,
+            desc: document.getElementById(
+              "transport" + current_order + "description"
+            ).value,
+            images: [],
+          };
+        } else {
+          let this_type = journalblock_arr[i].type;
+          journalblock_arr[i] = {
+            type: this_type,
+            order: i,
+            name: document.getElementById(this_type + current_order + "name")
+              .value,
+            transportType: "NOT A TRANSPORT",
+            destFrom: "NOT A TRANSPORT",
+            destTo: document.getElementById(this_type + current_order + "name")
+              .value,
+            timeFrom: document.getElementById(
+              this_type + current_order + "from"
+            ).value,
+            timeTo: document.getElementById(this_type + current_order + "to")
+              .value,
+            price: document.getElementById(this_type + current_order + "price")
+              .value,
+            link: document.getElementById(this_type + current_order + "link")
+              .value,
+            desc: document.getElementById(
+              this_type + current_order + "description"
+            ).value,
+            images: [],
+          };
+        }
+      }
+    };
+
+    const renderBlocks = () => {
+      // Comment this when testing
+      document.getElementById("blocks_area").innerHTML = "";
+      if (journalblock_arr.length == 0) {
+        document.getElementById("blocks_area").innerHTML =
+          "Your Block will be display here";
+
+        return;
+      }
+
+      for (let i = 0; i < journalblock_arr.length; i++) {
+        if (journalblock_arr[i].type == "day") {
+          document.getElementById(
+            "blocks_area"
+          ).innerHTML += `<div class="card m-2 p-2">
+                <div class="row align-items-center">
+                  <div class="col-1">
+                    <div><span class="material-symbols-outlined">today</span></div>
+                    <button type="button" class="btn btn-secondary btn-sm mt-1">
+                      <span class="material-symbols-outlined">expand_less</span>
+                    </button>
+                    <button type="button" class="btn btn-secondary btn-sm mt-1">
+                      <span class="material-symbols-outlined">expand_more</span>
+                    </button>
+                  </div>
+                  <div class="col-1">
+                    <h2>Day</h2>
+                  </div>
+                  <div class="col-1">
+                    <input type="number" class="form-control" id="day${i}" value="${journalblock_arr[i].day}" />
+                  </div>
+                </div>
+                <div style="text-align: right">
+                  <button
+                    type="button"
+                    class="btn btn-danger mr-0 ml-auto"
+                    style="width: 10%"
+                    onclick='removeBlock(${journalblock_arr[i].order})'
+                  >
+                    Remove
+                  </button>
+                </div>
+              </div>`;
+        } else if (journalblock_arr[i].type == "transport") {
+          document.getElementById(
+            "blocks_area"
+          ).innerHTML += `<div class="card m-2 p-2">
+                <div class="row align-items-center">
+                  <div class="col-1">
+                    <div><span class="material-symbols-outlined">Flight</span></div>
+                    <button type="button" class="btn btn-secondary btn-sm mt-1">
+                      <span class="material-symbols-outlined">expand_less</span>
+                    </button>
+                    <button type="button" class="btn btn-secondary btn-sm mt-1">
+                      <span class="material-symbols-outlined">expand_more</span>
+                    </button>
+                  </div>
+                  <div class="col">
+                    <div class="row">
+                      <div class="col-3">
+                        <label for="transport${i}from">Time</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="transport${i}from"
+                          placeholder="From"
+                          value="${journalblock_arr[i].timeFrom}"
+                        />
+                      </div>
+                      <div class="col-3">
+                        <label for="transport${i}to"> </label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="transport${i}to"
+                          placeholder="To"
+                          value="${journalblock_arr[i].timeTo}"
+                        />
+                      </div>
+                      <div class="col-3">
+                        <label for="transport${i}type" class="form-label"
+                          >Transportation</label
+                        >
+                        <select id="transport${i}type" class="form-select">
+                          <option value="NONE" selected>Select Option</option>
+                          <option value="WALK">Walking</option>
+                          <option value="BUS">Bus</option>
+                          <option value="CAR">Car</option>
+                          <option value="PLANE">Plane</option>
+                          <option value="TRAIN">TRAIN</option>
+                        </select>
+                      </div>
+                      <div class="col-2">
+                        <label for="transport${i}price">Price</label>
+                        <input
+                          type="number"
+                          class="form-control"
+                          id="transport${i}price"
+                          placeholder="Total Spent"
+                          value="${journalblock_arr[i].price}"
+                        />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-5">
+                        <label for="transport${i}namefrom">Destination</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="transport${i}namefrom"
+                          placeholder="From"
+                          value="${journalblock_arr[i].destFrom}"
+                        />
+                      </div>
+                      <div class="col-5">
+                        <label for="transport${i}nameto"> </label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="transport${i}nameto"
+                          placeholder="To"
+                          value="${journalblock_arr[i].destTo}"
+                        />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-11">
+                        <label for="transport${i}link">External Link</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="transport${i}link"
+                          placeholder=""
+                          value="${journalblock_arr[i].link}"
+                        />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-11">
+                        <label for="transport${i}description">Description</label>
+                        <textarea
+                          class="form-control"
+                          placeholder="Leave a comment here"
+                          id="transport${i}description"
+                          rows="4"
+                        >${journalblock_arr[i].desc}</textarea>
+                      </div>
+                    </div>
+                    <div class="row mt-2">
+                      <div class="col">
+                        <button type="button" class="btn btn-primary" disabled>
+                          Add Image
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div style="text-align: right">
+                  <button
+                    type="button"
+                    class="btn btn-danger mr-0 ml-auto"
+                    style="width: 10%"
+                    onclick='removeBlock(${journalblock_arr[i].order})'
+                  >
+                    Remove
+                  </button>
+                </div>
+              </div>`;
+        } else {
+          let type = journalblock_arr[i].type;
+          let icon = journalblock_arr[i].type;
+
+          if (icon == "attraction") {
+            icon = "attractions";
+          }
+          document.getElementById(
+            "blocks_area"
+          ).innerHTML += `<div class="card m-2 p-2">
+                <div class="row align-items-center">
+                  <div class="col-1">
+                    <div><span class="material-symbols-outlined">${icon}</span></div>
+                    <button type="button" class="btn btn-secondary btn-sm mt-1">
+                      <span class="material-symbols-outlined">expand_less</span>
+                    </button>
+                    <button type="button" class="btn btn-secondary btn-sm mt-1">
+                      <span class="material-symbols-outlined">expand_more</span>
+                    </button>
+                  </div>
+                  <div class="col">
+                    <div class="row">
+                      <div class="col-3">
+                        <label for="${type}${i}from">Time</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="${type}${i}from"
+                          placeholder="From"
+                          value="${journalblock_arr[i].timeFrom}"
+                        />
+                      </div>
+                      <div class="col-3">
+                        <label for="${type}${i}to"> </label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="${type}${i}to"
+                          placeholder="To"
+                          value="${journalblock_arr[i].timeTo}"
+                        />
+                      </div>
+                      <div class="col-3">
+                        <label for="${type}${i}name">Name</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="${type}${i}name"
+                          placeholder="Block name"
+                          value="${journalblock_arr[i].name}"
+                        />
+                      </div>
+                      <div class="col-2">
+                        <label for="${type}${i}price">Price</label>
+                        <input
+                          type="number"
+                          class="form-control"
+                          id="${type}${i}price"
+                          placeholder="Total Spent"
+                          value="${journalblock_arr[i].price}"
+                        />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-11">
+                        <label for="${type}${i}link">External Link</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="${type}${i}link"
+                          placeholder=""
+                          value="${journalblock_arr[i].link}"
+                        />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-11">
+                        <label for="${type}${i}description">Description</label>
+                        <textarea
+                          class="form-control"
+                          placeholder="Leave a comment here"
+                          id="${type}${i}description"
+                          rows="4"
+                        >${journalblock_arr[i].desc}</textarea>
+                      </div>
+                      <div class="row mt-2">
+                        <div class="col">
+                          <button
+                            type="button"
+                            class="btn btn-primary"
+                            disabled
+                          >
+                            Add Image
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div style="text-align: right">
+                  <button
+                    type="button"
+                    class="btn btn-danger mr-0 ml-auto"
+                    style="width: 10%"
+                    onclick='removeBlock(${journalblock_arr[i].order})'
+                  >
+                    Remove
+                  </button>
+                </div>
+              </div>`;
+        }
+      }
+    };
+
+    const validateBlocks = () => {
+      saveBlocks();
+      renderBlocks();
+
+      let isInvalid = false;
+
+      if (
+        !document.getElementById("title").value ||
+        document.getElementById("title").value == ""
+      ) {
+        document.getElementById("title").style.borderColor = "red";
+        isInvalid = true;
+      }
+
+      if (
+        !document.getElementById("tourism_type").value ||
+        document.getElementById("tourism_type").value == ""
+      ) {
+        document.getElementById("tourism_type").style.borderColor = "red";
+        isInvalid = true;
+      }
+
+      if (
+        !document.getElementById("no_adults").value ||
+        document.getElementById("no_adults").value == 0
+      ) {
+        document.getElementById("no_adults").style.borderColor = "red";
+        isInvalid = true;
+      }
+
+      for (let i = 0; i < journalblock_arr.length; i++) {
+        let this_type = journalblock_arr[i].type;
+        let current_order = journalblock_arr[i].order;
+
+        if (this_type != "day") {
+          if (this_type == "transport") {
+            if (journalblock_arr[i].transportType == "NONE") {
+              isInvalid = true;
+              document.getElementById(
+                "transport" + current_order + "type"
+              ).style.borderColor = "red";
+            }
+
+            if (!journalblock_arr[i].destFrom) {
+              isInvalid = true;
+              document.getElementById(
+                this_type + current_order + "namefrom"
+              ).style.borderColor = "red";
+            }
+
+            if (!journalblock_arr[i].destTo) {
+              isInvalid = true;
+              document.getElementById(
+                this_type + current_order + "nameto"
+              ).style.borderColor = "red";
+            }
+          } else {
+            if (!journalblock_arr[i].name) {
+              isInvalid = true;
+              document.getElementById(
+                this_type + current_order + "name"
+              ).style.borderColor = "red";
+            }
+          }
+
+          if (!journalblock_arr[i].timeFrom) {
+            isInvalid = true;
+            document.getElementById(
+              this_type + current_order + "from"
+            ).style.borderColor = "red";
+          }
+
+          if (!journalblock_arr[i].timeTo) {
+            isInvalid = true;
+            document.getElementById(
+              this_type + current_order + "to"
+            ).style.borderColor = "red";
+          }
+        }
+      }
+
+      return !isInvalid;
+    };
+
+    const navigate = (param) => {
+      window.location.href = param;
+    };
+
+    const fieldAlert = () => {
+      document.getElementById("field_alert").style.display = "block";
+    };
+
+    const closeFieldAlert = () => {
+      document.getElementById("field_alert").style.display = "none";
+    };
+
+    const submitJournal = () => {
+      //console.log("Function In");
+      if (validateBlocks()) {
+        //Budget Calculator
+        let budget = 0;
+        for (let i = 0; i < journalblock_arr.length; i++) {
+          if (journalblock_arr[i].price) {
+            if (parseFloat(journalblock_arr[i].price) > 0) {
+              budget += parseFloat(journalblock_arr[i].price);
+            }
+          }
+        }
+
+        //People Identifier
+        no_adults = parseInt(document.getElementById("no_adults").value);
+        no_children = parseInt(document.getElementById("no_children").value);
+        peopleType = "";
+
+        if (no_adults == 1) {
+          peopleType = "Individual";
+        }
+
+        if (no_adults == 2) {
+          peopleType = "Partner";
+        }
+
+        if (no_adults + no_children >= 6 || no_adults >= 4) {
+          peopleType = "Group";
+        }
+
+        if (no_adults >= 2 && no_children >= 1) {
+          peopleType = "Family";
+        }
+
+        //Tags parser
+        let tags = document.getElementById("tags").value.split(";");
+
+        //Build Journal Object
+        let journal = {
+          user_id: user_id,
+          user_searchable: user_searchable,
+          title: document.getElementById("title").value,
+          type: document.getElementById("tourism_type").value,
+          description: document.getElementById("description").value,
+          people: {
+            adult: document.getElementById("no_adults").value,
+            children: document.getElementById("no_children").value,
+          },
+          //Change favorite to array of ObjectID (So we know who liked the journal)
+          favorite: [],
+          privacy: "PUBLIC",
+          images: [],
+          blocks: journalblock_arr,
+          comments: [],
+          disabled: false,
+          dateCreated: Math.floor(Date.parse(new Date()) / 1000),
+          dateUpdate: Math.floor(Date.parse(new Date()) / 1000),
+          budget: budget,
+          peopleType: peopleType,
+          overallTransport: null,
+          tags: tags,
+        };
+
+        console.log(journal);
+        //console.log("Function Post");
+        $.post(
+          "http://23.100.93.126:1880/journalor/save_journal",
+          journal,
+          (res) => {
+            console.log(res);
+            if (res.code == 200) {
+              window.location.href = "./view_journal.html?id=" + res.journal;
+            }
+          }
+        );
+      }
+    };
+
+    $(document).ready(() => {
+      //Session Check
+      let session = localStorage.getItem("journalor_login_session_data");
+
+      if (session) {
+        req = {
+          session: session,
+        };
+
+        $.post("http://23.100.93.126:1880/journalor/authorize", req, (res) => {
+          //The Session is Valid
+          if (res.code == 200) {
+            user_id = res.user_id;
+            user_searchable = res.searchable;
+            renderBlocks();
+            document.getElementById("main").style.display = "block";
+          } else {
+            window.location.href = "./SignIn_page.html";
+          }
+        });
+      }
+    });
+  </script>
+</html>

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+      type="text/javascript"
+    ></script>
+    <script src="./script/jquery.js"></script>
+    <!-- Bootstrap CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <!-- Bootstrap JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+      }
+    </style>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+
+    <title>View Journal</title>
+  </head>
+  <style>
+    .card-sub {
+      cursor: move;
+      border: none;
+      margin: 10px;
+      -webkit-box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.05),
+        0 -2px 1px -2px rgba(0, 0, 0, 0.04), 0 0 0 -1px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.05),
+        0 -2px 1px -2px rgba(0, 0, 0, 0.04), 0 0 0 -1px rgba(0, 0, 0, 0.05);
+    }
+
+    .card-block {
+      margin: 10px;
+      padding: 1.25rem;
+      background-color: #fff !important;
+    }
+    header {
+      font-family: Arial, Helvetica, sans-serif;
+      width: 100%;
+      background-color: white;
+      border-bottom: 2px solid black;
+      color: black;
+      font-size: 65px;
+    }
+
+    /* Style all font awesome icons */
+    .IC {
+      float: right;
+      padding: 10px;
+      font-size: 70px;
+      width: 70px;
+      height: 90px;
+      text-align: center;
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+
+      border: none;
+      border-radius: 50%;
+    }
+
+    /* Add a hover effect if you want */
+    .IC:hover {
+      opacity: 0.7;
+    }
+
+    /* magnifying glass */
+    .IC-magnifyingglass {
+      background: white;
+    }
+
+    /* bell */
+    .IC-bell {
+      background: white;
+    }
+
+    /* profile */
+    .IC-profile {
+      background: white;
+    }
+
+    #newbook {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style-type: none;
+      width: 25%;
+      margin: 0;
+      padding: 1%;
+      overflow: hidden;
+      background-color: #eba92a;
+    }
+    a {
+      text-align: justify;
+    }
+
+    img {
+      padding: 0 20px 0;
+      align-content: center;
+    }
+    #extra1,
+    #extra2 {
+      padding: 0 100px 0;
+    }
+  </style>
+  <header>
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+      }
+    </style>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+
+
+      <div style="padding: 20px">
+        <button style="border: none; background-color: rgba(0, 0, 0, 0);" onclick="navigate('browse_page.html')"> Journalor </button>
+  
+
+      <!-- Add icon library -->
+      <link rel="stylesheet" href="  " />
+
+      <!-- Add font awesome icons -->
+      <button href="#" class="IC IC-profile" onclick="navigate('./profile_page.html')"> 
+        <span class="material-symbols-outlined">Person</span></button>
+
+      <button href="#" class="IC IC-bell" onclick="navigate('./notification_page.html')"> 
+        <span class="material-symbols-outlined">Notifications</span></button>
+
+      <button href="#" class="IC IC-magnifyingglass" onclick="navigate('./search_page.html')">
+        <span class="material-symbols-outlined">Search</span> </button>
+
+    </div>
+  </header>
+  <body id="main" style="display: none;">
+    <!-- Journal Overview Card -->
+    <div class="container-fluid">
+      <div class="card" style="margin-top: 20px">
+        <!-- <img class="card-img-top" src="..." alt="Card image cap" /> -->
+        <div class="card-body">
+          <div class="container-fluid">
+            <div class="row row-cols-5">
+              <div class="col-6">
+                <h1 class="card-title" id="title">Journal title</h1>
+              </div>
+
+              <div class="col-2">
+                <div></div>
+              </div>
+
+              <div class="col-3"></div>
+              <div class="col-1">
+                <div><span class="material-symbols-outlined" style="font-size: 50px;">Favorite</span></div>
+              </div>
+              <div class="col-3">
+                <span style="font-size: 20px">Tourism Type: </span
+                ><span style="font-size: 20px" id="tourism_type">Very long tourism_type</span>
+              </div>
+              <div class="col-2">
+                <span style="font-size: 20px">Group Type: </span
+                ><span style="font-size: 20px" id="group_type">very Long Number</span>
+              </div>
+              <div class="col-2">
+                <span style="font-size: 20px">Adults: </span
+                ><span style="font-size: 20px" id="no_adults">very Long Number</span>
+              </div>
+              <div class="col-2">
+                <span style="font-size: 20px">Children: </span
+                ><span style="font-size: 20px" id="no_children">very Long Number</span>
+              </div>
+              <div class="col-3 text-right" style="text-align: right;">
+                <span style="font-size: 20px; padding-top: 20px;" id="tags">Tags</span></label
+                >
+                </div>
+              
+            </div>
+            <div class="row" style="margin-top: 20px">
+                <div class="col">
+                  <p id="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur eius, accusantium veniam vitae nemo a blanditiis nobis deleniti quae, velit tempore ipsa maxime quas autem ullam placeat, est iure tempora!</p>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Journal Blocks and Option -->
+    <div class="container-fluid mt-3">
+      <div class="row">
+        <div class="col-12">
+          <!-- Alert -->
+          <div
+            class="alert alert-warning alert-dismissible fade show"
+            role="alert"
+            id="field_alert"
+            style="display: none"
+          >
+            Please fill all the required fields
+            <button
+              type="button"
+              class="close"
+              data-dismiss="alert"
+              aria-label="Close"
+              style="background-color: rgba(0, 0, 0, 0); border: 0"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <!-- Actual Journal Block -->
+          <div class="card">
+            <!-- Block Area -->
+            <div id="blocks_area" style="padding: 20px">
+              No block to display
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+  </body>
+
+  <script>
+
+    let user_id = "";
+    let user_searchable = "";
+
+    const renderBlocks = (journal) => {
+
+        let journalblock_arr = journal.blocks
+
+
+        document.getElementById("title").innerHTML = journal.title
+        document.getElementById("tourism_type").innerHTML = journal.type
+        document.getElementById("group_type").innerHTML = journal.peopleType
+        document.getElementById("no_adults").innerHTML = journal.people.adult
+        document.getElementById("no_children").innerHTML = journal.people.children
+
+        if (journal.people.children == "")
+        {
+            document.getElementById("no_children").innerHTML = "-"
+        }
+
+        document.getElementById("tags").innerHTML = journal.tags
+
+        if (!journal.tags)
+        {
+            document.getElementById("tags").innerHTML = ""
+        }
+
+        document.getElementById("description").innerHTML = journal.description
+
+      // Comment this when testing
+      document.getElementById("blocks_area").innerHTML = "";
+      if (journalblock_arr.length == 0) {
+        document.getElementById("blocks_area").innerHTML =
+          "No block to display";
+
+        return;
+      }
+
+      for (let i = 0; i < journalblock_arr.length; i++) {
+        if (journalblock_arr[i].type == "day") {
+          document.getElementById(
+            "blocks_area"
+          ).innerHTML += `    <div class="card m-2 p-2">
+        <div class="row align-items-center text-center">
+          <h1><span class="material-symbols-outlined">Today</span>   Day <span>${journalblock_arr[i].day}</span> </h1>
+          </div>
+        </div>`;
+        } else if (journalblock_arr[i].type == "transport") {
+          document.getElementById(
+            "blocks_area"
+          ).innerHTML += `<div class="card m-2 p-2">
+        <div class="row align-items-center">
+          <div class="col-1">
+            <div><span class="material-symbols-outlined" style="font-size: 50px;">Flight</span></div>
+
+          </div>
+          <div class="col">
+            <div class="row mt-2">
+              <div class="col-4">
+                <span style="font-size: 40px;">${journalblock_arr[i].timeFrom} - ${journalblock_arr[i].timeTo}</span>
+              </div>
+              <div class="col-4">
+                <span style="font-size: 40px;">By: ${journalblock_arr[i].transportType}</span>
+              </div>
+              <div class="col-4">
+                <span style="font-size: 40px;">฿ ${journalblock_arr[i].price}</span>
+              </div>
+            </div>
+            <div class="row mt-5">
+              <div class="col-12">
+                <span style="font-size: 40px;">From ${journalblock_arr[i].destFrom} to ${journalblock_arr[i].destTo}</span>
+              </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-11">
+                  <p>${journalblock_arr[i].desc}</p>
+                </div>
+              </div>
+            <div class="row mt-2">
+              <div class="col-11">
+                <a href="${journalblock_arr[i].link}" target="_blank" style="font-size: 30px;"><button class="btn btn-lg btn-primary">External Link</button></a>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>`;
+        } else {
+          let type = journalblock_arr[i].type;
+          let icon = journalblock_arr[i].type;
+
+          if (icon == "attraction") {
+            icon = "attractions";
+          }
+          document.getElementById(
+            "blocks_area"
+          ).innerHTML += `<div class="card m-2 p-2">
+        <div class="row align-items-center">
+          <div class="col-1">
+            <div><span class="material-symbols-outlined" style="font-size: 50px;">${icon}</span></div>
+          </div>
+          <div class="col">
+            <div class="row mt-2">
+                <div class="col-4">
+                  <span style="font-size: 40px;">${journalblock_arr[i].timeFrom} - ${journalblock_arr[i].timeTo}</span>
+                </div>
+                <div class="col-4">
+                  <span style="font-size: 40px;">${journalblock_arr[i].name}</span>
+                </div>
+                <div class="col-4">
+                  <span style="font-size: 40px;">฿ ${journalblock_arr[i].price}</span>
+                </div>
+              </div>
+
+              <div class="row mt-5">
+                <div class="col-11">
+                  <p>${journalblock_arr[i].desc}</p>
+                </div>
+              </div>
+            <div class="row mt-2">
+                <div class="col-11">
+                    <a href="${journalblock_arr[i].link}" target="_blank" style="font-size: 30px;"><button class="btn btn-lg btn-primary">External Link</button></a>
+                  </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>`;
+        }
+      }
+    };
+
+    const navigate = (param) => {
+      window.location.href = param;
+    };
+
+    $(document).ready(() => {
+      //Session Check
+      let session = localStorage.getItem("journalor_login_session_data");
+
+      if (session) {
+        req = {
+          session: session,
+        };
+
+        $.post("http://23.100.93.126:1880/journalor/authorize", req, (res) => {
+          //The Session is Valid
+          if (res.code == 200) {
+            //Must load user
+            user_id = res.user_id;
+            user_searchable = res.searchable;
+
+            let urlParams = new URLSearchParams(window.location.search);
+
+            let searchable = urlParams.get("id");
+
+            let req = {
+                searchable: searchable
+            }
+
+            $.post("http://23.100.93.126:1880/journalor/load_journal_single",req,(res) =>{
+                if (res.code == 200)
+                {
+                    console.log(res.journal)
+                    renderBlocks(res.journal)
+                    //Render the rest
+                }
+                else
+                {
+                    document.getElementById("main").innerHTML = "Journal not found"
+                }
+                document.getElementById("main").style.display = "block";
+            })
+            
+          } else {
+            window.location.href = "./SignIn_page.html";
+          }
+        });
+      }
+    });
+  </script>
+</html>

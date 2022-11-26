@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Journalor</title>
+    <!-- Bootstrap CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <!-- Bootstrap JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    header {
+      font-family: Arial, Helvetica, sans-serif;
+      width: 100%;
+      background-color: white;
+      border-bottom: 2px solid black;
+      color: black;
+      font-size: 65px;
+    }
+
+    /* Style all font awesome icons */
+    .IC {
+      float: right;
+      padding: 10px;
+      font-size: 70px;
+      width: 70px;
+      height: 90px;
+      text-align: center;
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+
+      border: none;
+      border-radius: 50%;
+    }
+
+    /* Add a hover effect if you want */
+    .IC:hover {
+      opacity: 0.7;
+    }
+
+    /* magnifying glass */
+    .IC-magnifyingglass {
+      background: white;
+
+    }
+
+    /* bell */
+    .IC-bell {
+      background: white;
+ 
+    }
+
+    /* profile */
+    .IC-profile {
+      background: white;
+
+    }
+
+    /* Dropdown Button */
+    /* .dropbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+} */
+
+    /* The container <div> - needed to position the dropdown content */
+    /* .dropdown {
+  position: relative;
+  display: inline-block;
+} */
+
+    /* Dropdown Content (Hidden by Default) */
+    /* .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+} */
+
+    /* Links inside the dropdown */
+    /* .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+} */
+
+    /* Change color of dropdown links on hover */
+    /* .dropdown-content a:hover {background-color: #ddd;} */
+
+    /* Show the dropdown menu on hover */
+    /* .dropdown:hover .dropdown-content {display: block;} */
+
+    /* Change the background color of the dropdown button when the dropdown content is shown */
+    /* .dropdown:hover .dropbtn {background-color: #3e8e41;} */
+
+    .menu-btn {
+      background-color: #518cff;
+      color: white;
+      padding: 16px;
+      font-size: 20px;
+      font-weight: bolder;
+      border: 1px solid;
+      width: 1100px;
+    }
+    .dropdown-menu {
+      position: relative;
+      display: inline-block;
+    }
+    .menu-content {
+      display: none;
+      position: absolute;
+      background-color: #518cff;
+      min-width: 160px;
+      z-index: 1;
+      width: 1100px;
+    }
+    .links {
+      color: rgb(255, 255, 255);
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-size: 18px;
+      font-weight: bold;
+      border-bottom: 1px solid black;
+    }
+    .links:hover {
+      background-color: white;
+    }
+    .dropdown-menu:hover .menu-btn {
+      background-color: #d4e5ff;
+    }
+  </style>
+  <header>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+      }
+    </style>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+
+    <div style="padding: 20px">
+      <div style="padding: 20px">
+        <button style="border: none; background-color: rgba(0, 0, 0, 0);" onclick="navigate('browse_page.html')"> Journalor </button>
+  
+
+      <!-- Add icon library -->
+      <link rel="stylesheet" href="  " />
+
+      <!-- Add font awesome icons -->
+      <button href="#" class="IC IC-profile" onclick="navigate('./profile_page.html')"> 
+        <span class="material-symbols-outlined">Person</span></button>
+
+      <button href="#" class="IC IC-bell" onclick="navigate('./notification_page.html')"> 
+        <span class="material-symbols-outlined">Notifications</span></button>
+
+      <button href="#" class="IC IC-magnifyingglass" onclick="navigate('./search_page.html')">
+        <span class="material-symbols-outlined">Search</span> </button>
+
+    </div>
+  </header>
+  <body>
+    <!-- <div class="dropdown">
+        <button class="dropbtn">Dropdown</button>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div> -->
+
+    <!-- <div class="dropdown-menu">
+        <button class="menu-btn" id="profilechange"> Profile </button>
+        <div class="menu-content">
+        <a class="links" href="#">My Profile</a>
+        <a class="links" href="#">My Cover Picture</a>
+        </div></div>
+
+        <div class="dropdown-menu">
+        <button class="menu-btn" id="accountchange"> Account </button>
+        <div class="menu-content">
+        <a class="links" href="#">Username</a>
+        <a class="links" href="#">Password</a>
+        <a class="links" href="#">Mail</a>
+        <a class="links" href="#">Date of Birth</a>
+        </div></div>
+
+        <div class="dropdown-menu">
+        <button class="menu-btn" id="notificationchange"> Notification </button>
+        <div class="menu-content">
+        <a class="links" href="#">On</a>
+        <a class="links" href="#">Off</a>
+        </div></div>
+
+        <div class="dropdown-menu">
+        <button class="menu-btn"> Help </button>
+        <div class="menu-content">
+        <a class="links" href="#">Report a Problem</a>
+        <a class="links" href="#">Contract Us</a>
+        <a class="links" href="#">FAQ</a>
+        </div></div>
+
+        <div class="dropdown-menu">
+        <button class="menu-btn"> Log Out </button>
+        <div class="menu-content">
+        <a class="links" href="#">Yes/a>
+        <a class="links" href="#">No</a>
+        </div></div> -->
+
+    <div class="container mt-5">
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+              aria-expanded="false"
+              aria-controls="collapseOne"
+            >
+              <h2>Profile</h2>
+            </button>
+          </h2>
+          <div
+            id="collapseOne"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingOne"
+            data-bs-parent="#accordionExample"
+          >
+
+          <div class="clntainer m-5">
+            <div>
+              <button> Change Profile </button><br>
+              <br><button> Change Cover Picture </button>
+            </div>
+          </div>
+          
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo"
+              aria-expanded="false"
+              aria-controls="collapseTwo"
+            >
+              <h2>Account</h2>
+            </button>
+          </h2>
+          <div
+            id="collapseTwo"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingTwo"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="container m-5">
+              <div class="row">
+                <div class="col">
+                  <input type="text" placeholder="Change Username"> <input type="text" placeholder="Change Password"> 
+                  <input type="text" placeholder="Change Mail"> <input type="date" placeholder="Change Date of Birth">
+                </div>
+            
+              </div>
+
+            </div>
+
+
+
+
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseThree"
+              aria-expanded="false"
+              aria-controls="collapseThree"
+            >
+              <h2>Notification</h2>
+            </button>
+          </h2>
+          <div
+            id="collapseThree"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingThree"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="container m-5">
+              <h4> Announce Notification </h4>
+              <div>
+                <button> Yes </button>
+                <button> No </button>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFour">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseFour"
+              aria-expanded="false"
+              aria-controls="collapseFour"
+            >
+              <h2>Help</h2>
+            </button>
+          </h2>
+          <div
+            id="collapseFour"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingFour"
+            data-bs-parent="#accordionExample"
+          >
+          <div class="clntainer m-5">
+            <div>
+              <button> Report Problem </button><br>
+              <br><button> Contact Us </button><br>
+              <br><button> FAQ </button>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFive">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseFive"
+              aria-expanded="false"
+              aria-controls="collapseFive"
+            >
+              <h2>Log Out</h2>
+            </button>
+          </h2>
+          <div
+            id="collapseFive"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingFive"
+            data-bs-parent="#accordionExample"
+          >
+          <div class="container m-5">
+            <h4> Are You sure you want to log out </h4>
+            <div>
+
+              <button onclick="user_logout()"> Yes </button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+
+    const user_logout = () => {
+      localStorage.removeItem("journalor_login_session_data");
+      window.location.href = "./SignIn_page.html";
+    };
+
+      const navigate = (param) => {
+        window.location.href = param;
+      };
+
+      let dropdownBtn = document.querySelector(".menu-btn");
+      let menuContent = document.querySelector(".menu-content");
+      dropdownBtn.addEventListener("click", () => {
+        if (menuContent.style.display === "") {
+          menuContent.style.display = "block";
+        } else {
+          menuContent.style.display = "";
+        }
+      });
+    </script>
+  </body>
+</html>
